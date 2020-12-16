@@ -256,12 +256,12 @@ class Plot:
     def Plot(self):
         if self.PlotType.upper() == 'LINE':
             return px.line(data_frame = self.Data.loc[:,self.PlotColumn].dropna(axis=0),
-                           y =  [col for col in self.Data.loc[:,self.PlotColumn] if col != 'Total'],
+                           y =  [col for col in self.Data.loc[:,self.PlotColumn].columns if col != 'Total'],
                            hover_data = {'Total':True})
         
         elif self.PlotType.upper() == 'AREA':
              return px.area(data_frame = self.Data.loc[:,self.PlotColumn].dropna(axis=0),
-                            y = [col for col in self.Data.loc[:,self.PlotColumn] if col != 'Total'],
+                            y = [col for col in self.Data.loc[:,self.PlotColumn].columns if col != 'Total'],
                             hover_data = {'Total':True})
     
         
