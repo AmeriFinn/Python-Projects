@@ -237,7 +237,7 @@ class Plot:
     def __init__(self, Data, PlotColumn, PlotType="Line"):
         """
         On initiation, inputs will be assigned as class attributes
-        
+        y =  [col for col in self.Data.loc[:,self.PlotColumn].columns if col != 'Total']
 
         Parameters
         ----------
